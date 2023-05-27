@@ -1,0 +1,58 @@
+.sideBar {
+  height: calc(100vh - var(--navbar-height));
+  width: var(--sidebar-width);
+  background: var(--inverted-bg-color);
+  color: var(--inverted-primary-color);
+  position: relative;
+  transition: width 0.28s ease-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.collapseBtn {
+  margin-top: 13px;
+  margin-left: 100%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: var(--inverted-primary-color);
+  transition: all 0.25s ease-in;
+  border: 1px solid var(--inverted-primary-color);
+  box-shadow: 4px 4px 12px -8px var(--inverted-primary-color);
+}
+
+.collapseBtn:hover {
+  background: var(--bg-color);
+  color: var(--primary-color);
+  box-shadow: 4px 4px 12px -8px var(--primary-color);
+}
+
+.menuCollapsedBtn {
+  transform: rotate(180deg);
+}
+
+
+.collapsed {
+  width: var(--sidebar-width-collapsed);
+}
+
+.switchers {
+  position: absolute;
+  bottom: var(--gap-lg);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 20px;
+}
+
+.collapsedSwitchers {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
