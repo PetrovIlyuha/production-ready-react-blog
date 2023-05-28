@@ -1,21 +1,21 @@
-import {useTheme} from 'app/providers/ThemeProvider';
-import {AppRouter} from "app/providers/router";
+import { useTheme } from 'app/providers/ThemeProvider';
+import { AppRouter } from 'app/providers/router';
 
-import {classNames} from 'shared/lib/classNames/classNames';
+import { classNames } from 'shared/lib/classNames/classNames';
 
-import "./styles/index.scss";
+import './styles/index.scss';
 
-import {NavBar} from "widgets/NavBar";
-import {SideBar} from "widgets/SideBar";
+import { NavBar } from 'widgets/NavBar';
+import { SideBar } from 'widgets/SideBar';
 
 export function App() {
-    const {theme} = useTheme();
+    const { theme } = useTheme();
     return (
         <div className={classNames('app', {}, [theme])}>
-            <NavBar/>
+            <NavBar />
             <div className="page-content">
-                <SideBar/>
-                <AppRouter/>
+                <SideBar />
+                <AppRouter />
             </div>
         </div>
     );

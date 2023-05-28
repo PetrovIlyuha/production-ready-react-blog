@@ -1,3 +1,3 @@
-import { LangToggler } from "./ui/LangToggler";
+import { LangToggler } from './ui/LangToggler';
 
-export {LangToggler}
+export { LangToggler };

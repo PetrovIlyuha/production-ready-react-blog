@@ -1,4 +1,4 @@
-export function classNames(mainClass: string, conditionalClasses: Record<string, boolean | string> = {}, additionalClassesMandatory: string[] = []): string {
-    return [mainClass, ...additionalClassesMandatory.filter(Boolean), ...Object.entries(conditionalClasses)
-        .map(([className, expression]) => expression ? className : null)].join(' ');
+export function classNames(main: string, modClasses: Record<string, boolean | string> = {}, addonClasses: string[] = []): string {
+    return [main, ...addonClasses.filter(Boolean), ...Object.entries(modClasses)
+        .map(([className, expression]) => (expression ? className : null))].join(' ');
 }

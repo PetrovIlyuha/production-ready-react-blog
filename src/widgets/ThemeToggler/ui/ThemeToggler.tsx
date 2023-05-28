@@ -1,41 +1,41 @@
-import {FC} from "react";
+import { FC } from 'react';
 
-import {classNames} from "shared/lib/classNames/classNames";
+import { classNames } from 'shared/lib/classNames/classNames';
 
+import { Theme, useTheme } from 'app/providers/ThemeProvider';
+
+import LightThemeIcon from 'shared/assets/icons/LightThemeIcon.svg';
+import DarkThemeIcon from 'shared/assets/icons/DarkThemeIcon.svg';
+import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import moduleClasses from './ThemeToggler.module.scss';
-
-
-import {Theme, useTheme} from "app/providers/ThemeProvider";
-
-import LightThemeIcon from 'shared/assets/icons/LightThemeIcon.svg'
-import DarkThemeIcon from 'shared/assets/icons/DarkThemeIcon.svg'
-import {Button, ButtonTheme} from "shared/ui/Button/Button";
 
 interface ThemeTogglerProps {
     className?: string;
 }
 
-export const ThemeToggler: FC<ThemeTogglerProps> = ({className}) => {
-    const {toggleTheme, theme} = useTheme()
+export const ThemeToggler: FC<ThemeTogglerProps> = ({ className }) => {
+    const { toggleTheme, theme } = useTheme();
 
     return (
-        <Button theme={ButtonTheme.CLEAN}
-                onClick={toggleTheme}
-                className={classNames(moduleClasses.toggler, {}, [className])}>
+        <Button
+            theme={ButtonTheme.CLEAN}
+            onClick={toggleTheme}
+            className={classNames(moduleClasses.toggler, {}, [className])}
+        >
             <div className={moduleClasses.iconWrapper}>
                 <div className={classNames(moduleClasses.icons, {
                     [moduleClasses.lightTheme]: theme === Theme.LIGHT,
-                    [moduleClasses.darkTheme]: theme === Theme.DARK
-                })}>
+                    [moduleClasses.darkTheme]: theme === Theme.DARK,
+                })}
+                >
                     <div>
-                        <LightThemeIcon/>
+                        <LightThemeIcon />
                     </div>
                     <div>
-                        <DarkThemeIcon/>
+                        <DarkThemeIcon />
                     </div>
                 </div>
             </div>
         </Button>
-    )
-        ;
+    );
 };
