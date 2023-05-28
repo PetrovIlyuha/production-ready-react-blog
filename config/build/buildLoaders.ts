@@ -13,12 +13,31 @@ export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
         use: ['@svgr/webpack']
     }
     const fileLoader = {
-            test: /\.(png|jpe?g|gif)$/i,
-            use: [
-                {
-                    loader: 'file-loader',
-                },
-            ],
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+            {
+                loader: 'file-loader',
+            },
+        ],
+    };
+    const babelLoader = {
+        test: /\.(js|jsx|tsx)$/,
+        exclude: /node_modules/,
+        use: {
+            loader: "babel-loader",
+            options: {
+                presets: ['@babel/preset-env'],
+                "plugins": [
+                    [
+                        "i18next-extract",
+                        {
+                            locales: ['en', 'ru'],
+                            keyAsDefaultValue: true
+                        }
+                    ]
+                ]
+            }
+        }
     };
     const cssLoader = {
         test: /\.s[ac]ss$/i,
@@ -36,5 +55,5 @@ export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
             "sass-loader",
         ],
     };
-    return [typescriptLoader, cssLoader, svgLoader, fileLoader]
+    return [babelLoader, typescriptLoader, cssLoader, svgLoader, fileLoader]
 }
