@@ -1,15 +1,10 @@
-.toggler {
-  background: var(--bg-color);
-  color: var(--primary-color);
-}
-
 .iconWrapper {
-  border-radius: 50%;
   position: relative;
   width: 44px;
   height: 44px;
   overflow: hidden;
   border: 2px solid var(--inverted-primary-color);
+  border-radius: 50%;
   background: var(--bg-color);
 }
 
@@ -28,5 +23,4 @@
   transform: translateX(0);
   transition: transform 0.3s;
   transition-delay: 0.15s;
-
 }

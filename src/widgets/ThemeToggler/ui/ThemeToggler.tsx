@@ -20,7 +20,7 @@ export const ThemeToggler: FC<ThemeTogglerProps> = ({ className }) => {
         <Button
             theme={ButtonTheme.CLEAN}
             onClick={toggleTheme}
-            className={classNames(moduleClasses.toggler, {}, [className])}
+            className={classNames('', {}, [className])}
         >
             <div className={moduleClasses.iconWrapper}>
                 <div className={classNames(moduleClasses.icons, {
