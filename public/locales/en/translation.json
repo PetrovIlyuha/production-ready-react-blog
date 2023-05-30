@@ -1,5 +1,7 @@
 {
   "MainNavMenuItem": "Main",
   "AboutNavMenuItem": "About",
-  "AppLanguage": "En"
+  "AppLanguage": "En",
+  "This Page does not exist": "This Page does not exist",
+  "page not found": "page not found"
 }

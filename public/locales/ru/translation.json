@@ -1,5 +1,7 @@
 {
   "AppLanguage": "Ru",
   "MainNavMenuItem": "Главная",
-  "AboutNavMenuItem": "О Нас"
+  "AboutNavMenuItem": "О Нас",
+  "This Page does not exist": "Данная страница не существует",
+  "page not found": "страница не найдена"
 }
