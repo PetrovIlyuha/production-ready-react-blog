@@ -2,6 +2,12 @@
   "AboutNavMenuItem": "",
   "AppLanguage": "",
   "MainNavMenuItem": "",
+  "Refresh": "Refresh",
   "This Page does not exist": "This Page does not exist",
+  "Unexpected failure occurred": {
+    " Try to reload an app": {
+      "": "Unexpected failure occurred. Try to reload an app."
+    }
+  },
   "page not found": "page not found"
 }

@@ -3,5 +3,7 @@
   "MainNavMenuItem": "Главная",
   "AboutNavMenuItem": "О Нас",
   "This Page does not exist": "Данная страница не существует",
-  "page not found": "страница не найдена"
+  "page not found": "страница не найдена",
+  "Unexpected failure occurred. Try to reload an app.": "Возникла непредвиденная ошибка. Попробуйте перезагрузить приложение.",
+  "Refresh": "Обновить"
 }

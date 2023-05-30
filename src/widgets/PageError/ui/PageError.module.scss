@@ -1,0 +1,25 @@
+.pageErrorWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-md);
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(20deg, blue, white);
+
+  .message {
+    font-size: 2rem;
+    font-family: Poppins, sans-serif;
+    text-shadow: 4px 3px 12px rgb(0 0 0 / 30%);
+  }
+
+  button {
+    background: #e73030;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-family: Poppins, sans-serif;
+    color: white;
+    box-shadow: 3px 3px 12px rgb(0 0 0 / 30%);
+  }
+}

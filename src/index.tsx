@@ -5,12 +5,16 @@ import { ThemeProvider } from 'app/providers/ThemeProvider';
 
 import 'shared/config/i18n/i18n';
 import { Suspense } from 'react';
+import { PageLoader } from 'widgets/PageLoader';
+import { ErrorBoundary } from 'app/providers/ErrorBoundary';
 
 render(
     <BrowserRouter>
         <ThemeProvider>
-            <Suspense fallback={<div>Loading...</div>}>
-                <App />
+            <Suspense fallback={<PageLoader />}>
+                <ErrorBoundary>
+                    <App />
+                </ErrorBoundary>
             </Suspense>
         </ThemeProvider>
     </BrowserRouter>,
