@@ -33,7 +33,7 @@ export const LangToggler: FC<LangTogglerProps> = ({ className }) => {
             theme={ButtonTheme.CLEAN}
             className={classNames(moduleClasses.langToggler, { [moduleClasses.animate]: animate }, [className])}
         >
-            {lang[0].toUpperCase() + lang.slice(1)}
+            {lang ? lang[0].toUpperCase() + lang.slice(1) : 'En'}
         </Button>
     );
 };

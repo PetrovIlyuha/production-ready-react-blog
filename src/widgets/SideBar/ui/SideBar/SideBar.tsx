@@ -16,9 +16,13 @@ export const SideBar: FC<SideBarProps> = ({ className }) => {
         setCollapsed((prev) => !prev);
     };
     return (
-        <div className={classNames(moduleClasses.sideBar, { [moduleClasses.collapsed]: collapsed }, [className])}>
+        <div
+            data-testid="sidebar"
+            className={classNames(moduleClasses.sideBar, { [moduleClasses.collapsed]: collapsed }, [className])}
+        >
             <button
                 type="button"
+                data-testid="toggle-sidebar_btn"
                 onClick={toggleCollapsedState}
                 className={classNames(moduleClasses.collapseBtn, { [moduleClasses.menuCollapsedBtn]: collapsed })}
             >
