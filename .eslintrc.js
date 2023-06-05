@@ -33,7 +33,7 @@ module.exports = {
         'react/function-component-definition': 'off',
         'import/no-extraneous-dependencies': 'warn',
         'no-underscore-dangle': 'off',
-        'i18next/no-literal-string': ['error', {
+        'i18next/no-literal-string': ['warn', {
             markupOnly: true,
             ignoreAttribute: ['data-testid'],
         }],
