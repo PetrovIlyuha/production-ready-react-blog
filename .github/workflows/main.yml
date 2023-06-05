@@ -23,6 +23,6 @@ jobs:
       - name: linting for typescript
         run: npm run lint:ts
       - name: linting for styles
-        run: npm run list:scss
+        run: npm run lint:scss
       - name: run init tests
         run: npm run unit
