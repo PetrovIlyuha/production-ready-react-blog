@@ -22,7 +22,7 @@ export const SideBar: FC<SideBarProps> = ({ className }) => {
         >
             <button
                 type="button"
-                data-testid="toggle-sidebar_btn"
+                data-testid="toggle__sidebar_btn"
                 onClick={toggleCollapsedState}
                 className={classNames(moduleClasses.collapseBtn, { [moduleClasses.menuCollapsedBtn]: collapsed })}
             >
