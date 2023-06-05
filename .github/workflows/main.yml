@@ -24,5 +24,5 @@ jobs:
         run: npm run lint:ts
       - name: linting for styles
         run: npm run lint:scss
-      - name: run init tests
-        run: npm run unit
+      - name: run unit tests
+        run: npm run tests:unit

@@ -12,7 +12,8 @@
     "lint:ts:fix": "eslint src/**/*.{js,jsx,tsx} --fix",
     "lint:scss": "npx stylelint \"**/*.scss\"",
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
-    "unit": "jest --config ./config/jest/jest.config.ts --watchAll",
+    "tests:unit": "jest --config ./config/jest/jest.config.ts",
+    "tests:unit:watch": "jest --config ./config/jest/jest.config.ts --watchAll",
     "sb": "storybook dev -p 6006 -c ./config/storybook",
     "build-storybook": "storybook build -c ./config/storybook"
   },
