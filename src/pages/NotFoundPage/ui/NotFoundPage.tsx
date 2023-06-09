@@ -2,9 +2,8 @@ import { FC } from 'react';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
+import NotFoundPageImg from 'shared/assets/not_found.jpg';
 import moduleClasses from './NotFoundPage.module.scss';
-
-import NotFoundPageImg from '../../../shared/assets/not_found.jpg';
 
 interface NotFoundPageProps {
     className?: string;

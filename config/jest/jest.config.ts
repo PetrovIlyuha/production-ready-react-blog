@@ -19,6 +19,7 @@ export default {
 
     moduleDirectories: [
         'node_modules',
+        'src/shared/assets',
     ],
 
     moduleFileExtensions: [
@@ -28,6 +29,7 @@ export default {
         'tsx',
         'json',
         'node',
+        'jpg',
     ],
     rootDir: '../../',
     testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
@@ -38,6 +40,7 @@ export default {
     moduleNameMapper: {
         '\\.sc?ss$': 'identity-obj-proxy',
         '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+        '\\.jpe?g': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
     },
 
     // Stop running tests after `n` failures
