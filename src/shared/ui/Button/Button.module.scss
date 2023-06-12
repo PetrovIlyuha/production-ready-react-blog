@@ -11,7 +11,7 @@
   outline: none;
 }
 
-.outline {
+.outlined {
   padding: 10px;
   border: 1px solid var(--primary-color);
   color: var(--primary-color);
@@ -20,9 +20,18 @@
   box-shadow: 2px 5px 14px rgb(0 0 0 / 15%);
 }
 
-.background_compliant {
+.outlined_background_compliant {
   padding: 10px;
   border: 1px solid var(--primary-color);
+  color: var(--inverted-primary-color);
+  background: none;
+  border-radius: 6px;
+  box-shadow: 2px 5px 14px rgb(0 0 0 / 15%);
+}
+
+.background_compliant {
+  padding: 10px;
+  border: 1px solid var(--inverted-primary-color);
   color: var(--inverted-primary-color);
   background: var(--inverted-bg-color);
   border-radius: 6px;

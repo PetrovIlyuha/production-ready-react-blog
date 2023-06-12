@@ -5,7 +5,7 @@ function MainPage() {
     return (
         <div>
             <h2>Main Page</h2>
-            <Button theme={ButtonTheme.BACKGROUND_COMPLIANT}>Click Me</Button>
+            <Button theme={ButtonTheme.OUTLINED}>Click Me</Button>
         </div>
     );
 }

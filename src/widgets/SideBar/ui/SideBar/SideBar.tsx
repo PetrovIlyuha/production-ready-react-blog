@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 import { ThemeToggler } from 'widgets/ThemeToggler';
@@ -7,6 +7,7 @@ import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { useTranslation } from 'react-i18next';
 
 import { RouterPaths } from 'shared/config/routerConfig/routerConfig';
+import useMediaQuery from 'shared/lib/hooks/useMediaQuery';
 import HomeIcon from '../../../../shared/assets/icons/Home_light.svg';
 import AboutIcon from '../../../../shared/assets/icons/Chat_search.svg';
 
@@ -19,9 +20,14 @@ interface SideBarProps {
 export const SideBar: FC<SideBarProps> = ({ className }) => {
     const [collapsed, setCollapsed] = useState(false);
     const { t } = useTranslation();
+    const isSmallScreen = useMediaQuery('(max-width: 768px)');
+
+    useEffect(() => {
+        setCollapsed(isSmallScreen);
+    }, [isSmallScreen]);
 
     const toggleCollapsedState = () => {
-        setCollapsed((prev) => !prev);
+        if (!isSmallScreen) setCollapsed((prev) => !prev);
     };
     return (
         <div
@@ -48,14 +54,16 @@ export const SideBar: FC<SideBarProps> = ({ className }) => {
                     </span>
                 </AppLink>
             </div>
-            <button
-                type="button"
-                data-testid="toggle__sidebar_btn"
-                onClick={toggleCollapsedState}
-                className={classNames(moduleClasses.collapseBtn, { [moduleClasses.sidebarCollapsedBtn]: collapsed })}
-            >
-                &lt;
-            </button>
+            {!isSmallScreen && (
+                <button
+                    type="button"
+                    data-testid="toggle__sidebar_btn"
+                    onClick={toggleCollapsedState}
+                    className={classNames(moduleClasses.collapseBtn, { [moduleClasses.sidebarCollapsedBtn]: collapsed })}
+                >
+                    &lt;
+                </button>
+            )}
             <div className={classNames(moduleClasses.switchers, { [moduleClasses.collapsedSwitchers]: collapsed })}>
                 <ThemeToggler />
                 <LangToggler />

@@ -5,7 +5,8 @@ import moduleClasses from './Button.module.scss';
 
 export enum ButtonTheme {
     CLEAN = 'clean',
-    OUTLINE = 'outline',
+    OUTLINED = 'outlined',
+    OUTLINED_BACKGROUND_COMPLIANT = 'outlined_background_compliant',
     BACKGROUND_COMPLIANT = 'background_compliant'
 }
 
