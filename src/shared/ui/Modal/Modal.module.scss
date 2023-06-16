@@ -12,8 +12,9 @@
 .modal_content {
   padding: 20px;
   border-radius: 12px;
-  background: #eee2e2;
   transition: 0.3s transform;
+  background: var(--inverted-bg-color);
+  color: var(--inverted-primary-color);
   transform: scale(0.5);
   max-width: 60%;
 }

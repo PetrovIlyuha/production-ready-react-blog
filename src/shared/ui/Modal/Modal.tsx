@@ -4,6 +4,7 @@ import React, {
 
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Teleport } from 'shared/ui/Teleport/Teleport';
+import { useTheme } from 'app/providers/ThemeProvider';
 import moduleClasses from './Modal.module.scss';
 
 interface ModalProps {
@@ -20,6 +21,7 @@ export const Modal: FC<ModalProps> = ({
 }) => {
     const [isClosing, setIsClosing] = useState(false);
     const timerRef = useRef<ReturnType<typeof setTimeout>>();
+    const { theme } = useTheme();
 
     const onModalClose = useCallback(() => {
         if (onClose) {
@@ -59,7 +61,7 @@ export const Modal: FC<ModalProps> = ({
             <div className={classNames(moduleClasses.modal, {
                 [moduleClasses.opened]: isOpen,
                 [moduleClasses.closing]: isClosing,
-            }, [className])}
+            }, [className, theme])}
             >
                 <div
                     className={moduleClasses.overlay}
