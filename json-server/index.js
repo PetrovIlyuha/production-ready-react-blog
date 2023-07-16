@@ -13,7 +13,7 @@ const SERVER_PORT = 8000;
 
 const getDb = () => JSON.parse(fs.readFileSync(path.resolve(__dirname, 'db.json'), 'UTF-8'));
 
-function isAuthenticated(req, res) {
+function isAuthenticated(req, res, returnData = 'data') {
     if (!req.headers.authorization) {
         return res.status(401).json({ message: "You're not authorized!" });
     }
@@ -28,7 +28,8 @@ function isAuthenticated(req, res) {
     if (!authorizedUser) {
         return res.status(401).json({ message: "You're not authorized!" });
     }
-    return data;
+    delete authorizedUser.password;
+    return returnData === 'data' ? data : authorizedUser;
 }
 
 app.use(async (req, res, next) => {
@@ -36,6 +37,11 @@ app.use(async (req, res, next) => {
         setTimeout(res, 500);
     });
     next();
+});
+
+app.get('/user', (req, res, next) => {
+    const data = isAuthenticated(req, res, 'user');
+    return res.json(data);
 });
 
 app.get('/posts', (req, res, next) => {

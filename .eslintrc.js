@@ -22,6 +22,7 @@ module.exports = {
         'react/jsx-filename-extension': [2, {
             extensions: ['.js', '.jsx', '.tsx'],
         }],
+        'jsx-a11y/no-noninteractive-element-interactions': ['off'],
         'react/react-in-jsx-scope': ['off'],
         'import/no-unresolved': ['off'],
         'import/prefer-default-export': ['off'],

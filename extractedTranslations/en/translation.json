@@ -2,7 +2,10 @@
   "AboutNavMenuItem": "",
   "AppLanguage": "",
   "Log in": "Log in",
+  "Login": "Login",
+  "Login to Streams": "Login to Streams",
   "MainNavMenuItem": "",
+  "Password": "Password",
   "Refresh": "Refresh",
   "This Page does not exist": "This Page does not exist",
   "Unexpected failure occurred": {
@@ -10,5 +13,6 @@
       "": "Unexpected failure occurred. Try to reload an app."
     }
   },
+  "Your email": "Your email",
   "page not found": "page not found"
 }

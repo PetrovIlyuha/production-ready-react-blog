@@ -1,0 +1,46 @@
+.Input {
+  width: 100%;
+
+  input {
+    padding: 8px 12px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    z-index: 10;
+    width: 100%;
+  }
+
+  position: relative;
+}
+
+.placeholder {
+  position: absolute;
+  top: 0.4rem;
+  left: 0.5rem;
+  transition: all 0.2s ease-in;
+  z-index: 5;
+
+  &.placeholderLifted {
+    top: -1.2rem;
+    font-size: 0.7rem;
+    opacity: 0.8;
+  }
+}
+
+.ErrorMessage {
+  animation: slide-up 0.3s ease-out;
+  position: absolute;
+  top: 100%;
+  color: #e73030;
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

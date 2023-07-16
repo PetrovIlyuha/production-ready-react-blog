@@ -6,5 +6,9 @@
   "page not found": "страница не найдена",
   "Unexpected failure occurred. Try to reload an app.": "Возникла непредвиденная ошибка. Попробуйте перезагрузить приложение.",
   "Refresh": "Обновить",
-  "Log in": "Войти"
+  "Log in": "Войти",
+  "Login": "Войти",
+  "Your email": "Ваша почта",
+  "Password": "Пароль при регистрации",
+  "Login to Streams": "Войти в Streams"
 }

@@ -11,17 +11,23 @@ interface ModalProps {
     className?: string;
     children: ReactNode,
     isOpen?: boolean;
-    onClose?: () => void
+    onClose?: () => void,
+    lazy?: boolean;
 }
 
 const ANIMATION_DURATION = 300;
 
 export const Modal: FC<ModalProps> = ({
-    className, children, isOpen, onClose,
+    className, children, isOpen, onClose, lazy,
 }) => {
     const [isClosing, setIsClosing] = useState(false);
     const timerRef = useRef<ReturnType<typeof setTimeout>>();
+    const [isMounted, setIsMounted] = useState<boolean>(false);
     const { theme } = useTheme();
+
+    useEffect(() => {
+        if (isOpen) setIsMounted(true);
+    }, [isOpen]);
 
     const onModalClose = useCallback(() => {
         if (onClose) {
@@ -51,6 +57,8 @@ export const Modal: FC<ModalProps> = ({
         },
         [isOpen, onKeyDown],
     );
+
+    if (lazy && !isMounted) return null;
 
     const onContentClick = (e: React.MouseEvent) => {
         e.stopPropagation();
