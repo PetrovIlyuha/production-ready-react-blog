@@ -1,0 +1,32 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-app",
+      "author": "typicode"
+    },
+    {
+      "username": "poweruser",
+      "password": "superadmin108",
+      "id": 2
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "users": [
+    {
+      "email": "mark@gmail.com",
+      "password": "$2a$10$6hlYhC3HZPIKnEEOq3shEurhebvt022eC2trU31uCjEdC.pyxwXTe",
+      "username": "Mark Twain",
+      "id": 2
+    }
+  ]
+}
