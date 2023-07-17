@@ -12,7 +12,7 @@ interface NavbarProps {
 
 export function NavBar({ className }: NavbarProps) {
     const { t } = useTranslation();
-    const [authModalOpened, setAuthModalOpened] = useState(false);
+    const [authModalOpened, setAuthModalOpened] = useState(true);
 
     const toggleModal = () => {
         setAuthModalOpened((prevState) => !prevState);

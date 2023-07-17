@@ -3,6 +3,9 @@ import {
 } from 'react';
 
 import { classNames } from 'shared/lib/classNames/classNames';
+import { Theme, useTheme } from 'app/providers/ThemeProvider';
+import HideIcon from '../../assets/icons/HideIcon.svg';
+import ViewIcon from '../../assets/icons/ViewIcon.svg';
 import moduleClasses from './Input.module.scss';
 
 type HtmlInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
@@ -29,10 +32,12 @@ export const Input = ({
     autoFocus,
     ...otherProps
 }: InputProps) => {
+    const { theme } = useTheme();
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         onChange?.(e.target.value);
     };
     const [placeholderInPlace, setPlaceholderInPlace] = useState(true);
+    const [currentInputType, setCurrentInputType] = useState<string>(type);
     const inputRef = useRef<HTMLInputElement>(null);
 
     useEffect(() => {
@@ -41,6 +46,8 @@ export const Input = ({
             setPlaceholderInPlace(false);
         }
     }, [autoFocus]);
+
+    const toggleInputHidden = () => setCurrentInputType((prevType) => (prevType === 'password' ? 'text' : 'password'));
 
     const adjustPlaceholderPosition = (flag: boolean) => {
         if (value.length > 0) return;
@@ -59,11 +66,25 @@ export const Input = ({
                 onClick={() => adjustPlaceholderPosition(false)}
                 onBlur={() => adjustPlaceholderPosition(true)}
                 onFocus={() => adjustPlaceholderPosition(false)}
-                type={type}
+                type={currentInputType}
                 value={value}
                 onChange={onChangeHandler}
                 {...otherProps}
             />
+            {/* eslint-disable-next-line no-nested-ternary */}
+            {type === 'password' ? currentInputType === 'password'
+                ? (
+                    <ViewIcon
+                        className={classNames(moduleClasses.visibilityIcon, { [moduleClasses.darkIcon]: theme === Theme.LIGHT })}
+                        onClick={toggleInputHidden}
+                    />
+                )
+                : (
+                    <HideIcon
+                        className={classNames(moduleClasses.visibilityIcon, { [moduleClasses.darkIcon]: theme === Theme.LIGHT })}
+                        onClick={toggleInputHidden}
+                    />
+                ) : null}
             {fieldInvalid && <p className={moduleClasses.ErrorMessage}>{errorMessage}</p>}
         </div>
     );
